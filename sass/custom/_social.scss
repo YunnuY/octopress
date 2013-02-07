@@ -1,0 +1,43 @@
+.social{
+	height:100px;
+	width:980px;
+	position:relative;
+	margin:0 auto;
+	}	
+.social .social_header{
+	position: absolute;
+	right:6px;
+	top:5px;
+	color: #75858F;
+}
+.social .social_header a{top:0;}
+.social .social_header a:hover{text-decoration: underline;}
+
+.social .social_header .first_social{
+	padding-right: 10px;
+	border-right: 1px solid #CCCCCC;
+	margin-right: 6px;
+}
+.social .social_header .last_social{
+	padding-left: 10px;
+	border-left: 1px solid #CCCCCC;
+	margin-left: 6px;
+}
+.social .social_header .icon{
+	display: inline-block;
+	width:16px;
+	height:0;
+	padding-top: 16px;
+	background-repeat:no-repeat;
+	float: left;
+	margin:1px 3px;
+}
+.social .social_header .sina{background-image:url(../images/tsina16e.gif);}
+.social .social_header .sina:hover{background-image:url(../images/tsina16d.gif);}
+.social .social_header .qq{background-image:url(../images/tqq16e.gif);}
+.social .social_header .qq:hover{background-image:url(../images/tqq16d.gif);}
+
+.social .social_header p {
+	display: inline;
+	line-height:20px;
+}
