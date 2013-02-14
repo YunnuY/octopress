@@ -1,7 +1,5 @@
 /********************** social ***********************************/
 .navbar {
-  color: #4f545e;
-  background-image:url(../images/bg.png);
   a:link, a:visited{
     text-decoration: none;
     color:#4F545E;
@@ -17,7 +15,7 @@
   position: absolute;
   right:6px;
   top:5px;
-  color: #75858F;
+  color:#4F545E;
   padding-left: 750px;
 }
 #navigation_header #social_header a{top:0;}
@@ -29,12 +27,12 @@
 
 #navigation_header #social_header .first_social{
   padding-right: 10px;
-  border-right: 1px solid #CCCCCC;
+  border-right: 1px solid;
   margin-right: 6px;
 }
 #navigation_header #social_header .last_social{
   padding-left: 10px;
-  border-left: 1px solid #CCCCCC;
+  border-left: 1px solid;
   margin-left: 6px;
 }
 #navigation_header #social_header .icon{

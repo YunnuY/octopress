@@ -1,5 +1,7 @@
 @import "compass";
 
+$linkColor:            #007979;
+$linkColorHover:        darken($linkColor, 15%);
 @import "bootstrap/bootstrap";
 @import "bootstrap/responsive";
 
@@ -8,10 +10,12 @@
 @import "custom/highlight";
 
 @import "custom/header";
-@import "custom/index";
 @import "custom/footer";
+@import "custom/index";
+@import "custom/about";
 
-.about_banner {
-  color: #4f545e;
-  background-image:url(../images/about_head_bg.png);
+
+body {
+  //background-image:url(../images/noise2.png);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
