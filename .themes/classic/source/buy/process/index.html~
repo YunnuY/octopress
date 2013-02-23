@@ -1,0 +1,16 @@
+---
+layout: with_sidebar
+title: product
+---
+
+<div>
+<h2>我们提供两种付款方式，双方协商任选一种</h2>
+<hr/>
+<h4> 直接交易 </h4>
+<p> 我们推荐分阶段付款的方式减少双方的风险<span class="badge badge-info">推荐！</span> </p>
+<p><img src="{{ root_url }}/images/how-to-pay.png"/></p>
+<br/>
+<h4> 第三方交易平台 </h4>
+<p> 使用第三方外包平台如智城。需注册帐号及认证，延长资金到帐时间。<span class="badge badge-warning">仅推荐初次合作伙伴使用</span> </p>
+</div>
+

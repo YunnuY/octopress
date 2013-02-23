@@ -1,0 +1,22 @@
+{% if page.url contains '/product' %}
+<ul class="nav nav-tabs nav-stacked">
+  <li><a href="/product"><span>产品与服务</span></a></li>
+  <li><a href="/product/cost"><span>成本优势</span></a></li>
+  <li><a href="/product/agile"><span>敏捷服务</span></a></li>
+</ul>
+{% endif %}
+
+{% if page.url contains '/buy' %}
+<ul class="nav nav-tabs nav-stacked">
+  <li><a href="/buy"><span>产品价格</span></a></li>
+  <li><a href="/buy/process"><span>购买流程</span></a></li>
+</ul>
+{% endif %}
+
+
+{% if page.url contains '/about' %}
+<ul class="nav nav-tabs nav-stacked">
+  <li><a href="/about"><span>团队成员</span></a></li>
+  <li><a href="/about/contact"><span>联系方式</span></a></li>
+</ul>
+{% endif %}

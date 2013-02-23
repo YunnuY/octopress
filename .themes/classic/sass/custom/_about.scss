@@ -1,0 +1,93 @@
+
+.about_banner {
+  color: #4f545e;
+  background-image:url(../images/about_head_bg.png);
+}
+
+#speakers {
+  h2 { font-size:30px; margin-top: 80px; color:#b41808;  }
+  text-align: center; 
+}
+
+.speaker {
+  width: 407px;
+  margin:35px auto;
+  padding-right:135px;
+  height: 130px;
+  position:relative;
+  transition: width 0.5s;
+  -moz-transition: width 0.5s; /* Firefox 4 */
+  -webkit-transition: width 0.5s; /* Safari and Chrome */
+  -o-transition: width  0.5s; /* Opera */
+  .avatar {
+    width:100px; height:100px;
+    position:absolute; left:17px; top:10px;
+    img { width: 84px; height:84px; }
+  }
+  a.twitter {
+    display:block; position:absolute; width:25px;height:25px;
+    background:url('../images/tsina.png');
+    right:0px; top:39px;
+  }
+  .desc {
+    width: 249px;
+    height: 200px;
+    padding-left:145px; padding-right:25px;
+    overflow:hidden;
+    position:absolute; top:0; left:0;
+    background: url('../images/speaker-line.png') left top no-repeat;
+    transition: width 0.5s;
+    -moz-transition: width  0.5s; /* Firefox 4 */
+    -webkit-transition: width  0.5s; /* Safari and Chrome */
+    -o-transition: width 0.5s; /* Opera */
+    h3 {
+      margin:0; margin-top:20px; margin-bottom:20px; font-size:18px; text-align:center; 
+      transition: align 0.5s;
+      -moz-transition: align  0.5s; /* Firefox 4 */
+      -webkit-transition: align  0.5s; /* Safari and Chrome */
+      -o-transition: align 0.5s; /* Opera */
+    }
+    .subject,
+    .summary {
+      font-size:13px; font-weight:normal;
+    }
+    .summary { display:none; }
+    a { color:#FFF; }
+  }
+  &:hover {
+    width:650px;
+    .desc {
+      width:492px;
+      background-position: left -500px;
+      h3 { }
+      .subject { display:none; }
+      .summary {
+        display:block;
+      }
+    }
+  }
+}
+.speaker-odd {
+  padding-right:0px;
+  padding-left:135px;
+  a.twitter {
+    left:0; right:auto;
+  }
+  .desc {
+    margin-left:135px;
+    background: url('http://l.ruby-china.org/rubyconf2012/img/speaker-line.png') right -250px no-repeat;
+    padding-right:140px; padding-left:18px;
+  }
+  &:hover {
+    .desc {
+      background-position: right -750px;
+      h3 { }
+      .summary { }
+    }
+  }
+  .avatar {
+    left: auto;
+    right: 17px;
+  }
+}
+

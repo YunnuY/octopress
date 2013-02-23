@@ -1,0 +1,21 @@
+@import "compass";
+
+$linkColor:            #007979;
+$linkColorHover:        darken($linkColor, 15%);
+@import "bootstrap/bootstrap";
+@import "bootstrap/responsive";
+
+@import "custom/utilities";
+@import "custom/solarized";
+@import "custom/highlight";
+
+@import "custom/header";
+@import "custom/footer";
+@import "custom/index";
+@import "custom/about";
+
+
+body {
+  //background-image:url(../images/noise2.png);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
