@@ -325,17 +325,19 @@ task :setup_github_pages, :repo do |t, args|
       puts "Master branch renamed to 'source' for committing your blog source files"
     else
       unless !public_dir.match("#{project}").nil?
-        system "rake set_root_dir[#{project}]"
+        puts "seems don't need to set root_dir, by ming"
+        #system "rake set_root_dir[#{project}]"
       end
     end
   end
   url = "http://#{user}.github.com"
-  url += "/#{project}" unless project == ''
-  jekyll_config = IO.read('_config.yml')
-  jekyll_config.sub!(/^url:.*$/, "url: #{url}")
-  File.open('_config.yml', 'w') do |f|
-    f.write jekyll_config
-  end
+  #seems don't need to set root_dir, by ming"
+  #url += "/#{project}" unless project == ''
+  #jekyll_config = IO.read('_config.yml')
+  #jekyll_config.sub!(/^url:.*$/, "url: #{url}")
+  #File.open('_config.yml', 'w') do |f|
+  #  f.write jekyll_config
+  #end
   rm_rf deploy_dir
   mkdir deploy_dir
   cd "#{deploy_dir}" do
