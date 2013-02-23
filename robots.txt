@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://YunnuY.github.com/sitemap.xml 

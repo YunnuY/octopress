@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>云存储 - YunnuY</title>
+  <meta name="author" content="YunnuY Software">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://YunnuY.github.com/blog/2012/08/04/a-few-words-about-cloud-storage">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/application.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/octopress/atom.xml" rel="alternate" title="YunnuY" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body   >
+  <div class="navbar">
+  <div class="container">
+    <div class="nav-collapse">
+      <div id="navigation_header social_header" style="padding-left:750px; padding-top:5px">
+        <img class="icon sina" src="/images/tsina16e.gif" title="关注原力新浪微博"></img>
+        <img class="icon qq" src="/images/tqq16e.gif" title="关注原力腾讯微博"></img>
+        <a class="last_social" href="mailto:yunnuy.com@gmail.com" title="邮件联系原力">yunnuy.com@gmail.com</a>
+        <p class="last_social" style="display:inline" title="电话联系彭先生">杨先生【13651706129】; 彭先生【18621113676】</p>
+      </div>
+      <div class="navigation_header extro_op">
+        <a class="logo" href="/">YunnuY Software</a>
+        <div class="extro_op">
+          <ul>
+            <li class="home"><a href="/"><span>首页</span></a></li>
+            <li><a href="/product"><span>产品与服务</span></a></li>
+            <li><a href="/buy"><span>价格与购买</span></a></li>
+            <li><a href="/show"><span>作品展示</span></a></li>
+            <li><a href="/about"><span>关于原力</span></a></li>
+            <li><a href="/blog"><span>开发者博客</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+      
+<article class="hentry span9" role="article">
+
+  
+  <header class="page-header">
+    
+      <h1 class="entry-title">云存储</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-04T15:33:00+08:00" pubdate data-updated="true">Aug 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>写博客有时想放一些图片，就想到了云储存。平常也关注了下，但没认真考察过。
+首先说一下访问云的方式，从严格到开放的顺序：
+ <!-- more -->
+1. 需要登录他们的网站或者客户端，才能使用。既没有任何API。
+2. 有特定API，且是需要验证。如php，ios等。
+3. 有通用API，如json，uri等，但是会跳转到他们的网站。（外链 - Direct link:download)
+4. 通过url直接访问。（直链 - Direct link:streaming)</p>
+
+<p>然后看一下收费，基本都是这种存储 + 流量 分开付费的方式。</p>
+
+<p>然后我们看看一些云存储服务商。</p>
+
+<ol>
+<li>先说互联网老大，google storage,支持1，2，3种访问方式，到2012年底前，以下免费：</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>5 GB of storage
+</span><span class='line'>25 GB of download data (20 GB to Americas and EMEA*; 5 GB to Asia-Pacific)
+</span><span class='line'>25 GB of upload data (20 GB to Americas and EMEA*; 5 GB to Asia-Pacific)
+</span><span class='line'>30,000 GET, HEAD requests
+</span><span class='line'>3,000 PUT, POST, GET bucket, GET service requests</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li><p>opendrive *
+5G的免费存储，支持1，2，3种访问方式，通过交换链接，可以支持第4种访问方式加少量流量。
+适合写博客的我。<a href="http://www.opendrive.com" title="OpenDrive - Online storage, backup and file management">OpenDrive</a></p></li>
+<li><p>华为dbank
+提供较高性价比的直链服务。0.48/g，比google和有拍都便宜。</p></li>
+<li><p>有拍
+支持1，2，3，4种访问方式，无免费配额。听说服务稳定，价格适中。</p></li>
+<li>盛大云
+支持1，2，无免费版，仿亚马逊的，现在提够很多云服务。</li>
+<li>金山快盘 *
+注册送5G，支持1，2，3种访问方式。免费使用。</li>
+<li>skydrive *
+之前是25G，现在注册只有5G了。支持1，2，3种访问方式。有免费配额。</li>
+<li>dropbox
+和skydrive类似。</li>
+<li>ubuntu one *
+我用ubuntu，所以也用上了这个。5G免费配额。</li>
+<li>amazon s3
+知道它是老大，可惜一直被墙，无缘使用。</li>
+</ol>
+
+
+<p>   *表示已经试用。</p>
+
+<hr />
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">YunnuY Software</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-04T15:33:00+08:00" pubdate data-updated="true">Aug 4<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/resources/'>resources</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2012/08/04/create-logo-with-inkscape/" title="Previous Post:
+        create logo with inkscape">&laquo; create logo with inkscape</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2012/08/23/big-data-and-cloud/"
+        title="Next Post: big data and cloud">big data and cloud
+        &raquo;</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/02/pipeline-in-rails3-dot-1-plus/">pipeline in rails3.1+</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/24/game-theory/">Game theory - 博弈论</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/23/big-data-and-cloud/">big data and cloud</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/a-few-words-about-cloud-storage/">云存储</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/create-logo-with-inkscape/">create logo with inkscape</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+  </div>
+  <footer role="contentinfo" class="footer"><div class="copyright">
+  Copyright &copy; 2013 - <span class="credit">Powered by <a href="/">YunnuY Software</a></span>
+</div>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

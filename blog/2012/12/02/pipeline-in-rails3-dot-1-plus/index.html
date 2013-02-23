@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>pipeline in rails3.1+ - YunnuY</title>
+  <meta name="author" content="YunnuY Software">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://YunnuY.github.com/blog/2012/12/02/pipeline-in-rails3-dot-1-plus">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/application.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/octopress/atom.xml" rel="alternate" title="YunnuY" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body   >
+  <div class="navbar">
+  <div class="container">
+    <div class="nav-collapse">
+      <div id="navigation_header social_header" style="padding-left:750px; padding-top:5px">
+        <img class="icon sina" src="/images/tsina16e.gif" title="关注原力新浪微博"></img>
+        <img class="icon qq" src="/images/tqq16e.gif" title="关注原力腾讯微博"></img>
+        <a class="last_social" href="mailto:yunnuy.com@gmail.com" title="邮件联系原力">yunnuy.com@gmail.com</a>
+        <p class="last_social" style="display:inline" title="电话联系彭先生">杨先生【13651706129】; 彭先生【18621113676】</p>
+      </div>
+      <div class="navigation_header extro_op">
+        <a class="logo" href="/">YunnuY Software</a>
+        <div class="extro_op">
+          <ul>
+            <li class="home"><a href="/"><span>首页</span></a></li>
+            <li><a href="/product"><span>产品与服务</span></a></li>
+            <li><a href="/buy"><span>价格与购买</span></a></li>
+            <li><a href="/show"><span>作品展示</span></a></li>
+            <li><a href="/about"><span>关于原力</span></a></li>
+            <li><a href="/blog"><span>开发者博客</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+      
+<article class="hentry span9" role="article">
+
+  
+  <header class="page-header">
+    
+      <h1 class="entry-title">Pipeline in rails3.1+</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-02T16:22:00+08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p> pipeline 是rails3.1后引进的一个很有用的特性，它可以：
+ 1. 将你的 js，css 等静态资源 compile 到一个文件，减少了浏览器到服务器取这些资源时的连接数量；
+ 2. 压缩这个加工后的文件，并添加时间戳，减少了文件体积及加载次数；
+ 3. 可以放在 app,lib,vendor 的 asset 目录下，方便管理, 同时也让你可以用 help 方法方便的访问这些 resource；</p>
+
+<p> 以 js 文件举例子, 在app/asset/javascript中有一个 application.js 文件，它的内容如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// This is a manifest file that'll be compiled into application.js, which will include all the files
+</span><span class='line'>// listed below.
+</span><span class='line'>//
+</span><span class='line'>// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+</span><span class='line'>// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
+</span><span class='line'>//
+</span><span class='line'>// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+</span><span class='line'>// the compiled file.
+</span><span class='line'>//
+</span><span class='line'>// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
+</span><span class='line'>// GO AFTER THE REQUIRES BELOW.
+</span><span class='line'>//
+</span><span class='line'>//= require jquery
+</span><span class='line'>//= require jquery_ujs
+</span><span class='line'>//= require twitter/bootstrap
+</span><span class='line'>//= require sequence.jquery-min.js
+</span><span class='line'>//= require_tree .</span></code></pre></td></tr></table></div></figure>
+
+
+<p>很简单，你可以将<code>app/assets/javascripts</code>, <code>lib/assets/javascripts</code>, <code>vendor/assets/javascripts</code>想象成一个逻辑目录，
+然后 rails 的 pipeline 引擎会到逻辑目录里去找这个文件中提到的 js 文件，然后 compile 到application.js里面去。<strong>但是有个例外，在上面
+的例子中，require_tree不会到逻辑目录里去找，而是只到&#8217;app/assets/javascripts&#8217;里去找。</strong></p>
+
+<pre>
+The require_tree directive tells Sprockets to recursively include all JavaScript files in the specified directory into the output. These paths must be specified relative to the manifest file. You can also use the require_directory directive which includes all JavaScript files only in the directory specified, without recursion.
+</pre>
+
+
+<p>希望能帮到一些人, 不会像我一样错误的理解一个知识点，浪费2个小时找js文件为什么没有。。。</p>
+
+<p> <!-- more --></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">YunnuY Software</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-02T16:22:00+08:00" pubdate data-updated="true">Dec 2<span>nd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2012/08/24/game-theory/" title="Previous Post:
+        Game theory - 博弈论">&laquo; Game theory - 博弈论</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/02/pipeline-in-rails3-dot-1-plus/">pipeline in rails3.1+</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/24/game-theory/">Game theory - 博弈论</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/23/big-data-and-cloud/">big data and cloud</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/a-few-words-about-cloud-storage/">云存储</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/create-logo-with-inkscape/">create logo with inkscape</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+  </div>
+  <footer role="contentinfo" class="footer"><div class="copyright">
+  Copyright &copy; 2013 - <span class="credit">Powered by <a href="/">YunnuY Software</a></span>
+</div>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: resources | YunnuY]]></title>
+  <link href="http://YunnuY.github.com/blog/categories/resources/atom.xml" rel="self"/>
+  <link href="http://YunnuY.github.com/"/>
+  <updated>2013-02-23T23:40:25+08:00</updated>
+  <id>http://YunnuY.github.com/</id>
+  <author>
+    <name><![CDATA[YunnuY Software]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Game theory - 博弈论]]></title>
+    <link href="http://YunnuY.github.com/blog/2012/08/24/game-theory/"/>
+    <updated>2012-08-24T23:31:00+08:00</updated>
+    <id>http://YunnuY.github.com/blog/2012/08/24/game-theory</id>
+    <content type="html"><![CDATA[<p>游戏中双方为了达到各自的目标和利益，各方必须考虑对手的各种可能的行动方案，并力图选取对自己最为有利或最为合理的方案。
+博弈论考虑游戏中的个体的预测行为和实际行为，并研究它们的优化策略。
+ <!-- more --></p>
+
+<h2>非零和博弈</h2>
+
+<p>是一种非合作下的博弈，博弈中各方的收益或损失的总和不是零值，自己的所得并不与他人的所失的大小相等。<strong>双方有合作的可能</strong>。</p>
+
+<h3>囚徒困境</h3>
+
+<p>是博弈论的非零和博弈中具代表性的例子，<strong>反映個人最佳選擇並非团体最佳選擇</strong></p>
+
+<blockquote><p>警方逮捕甲、乙两名嫌疑犯，但沒有足够证据指控二人有罪。於是警方分开囚禁嫌疑犯，分别和二人见面，并向雙方提供以下相同的选择：
+- 若一人認罪並作证检控對方（相關術語稱「背叛」對方），而對方保持沉默，此人将即時獲释，沉默者将判監10年。
+- 若二人都保持沉默（相關術語稱互相「合作」），则二人同樣判监半年。  <br/>
+- 若二人都互相检举（互相「背叛」），則二人同樣判監2年。
+試設想困境中兩名理性囚徒會如何作出選擇：  <br/>
+- 若對方沉默、我背叛會讓我獲釋，所以會選擇背叛。
+- 對方背叛指控我，我也要指控對方才能得到較低的刑期，所以也是會選擇背叛。</p></blockquote>
+
+<p>二人面對的情況一樣，所以二人的理性思考都会得出相同的结论——选择背叛。
+以全体利益而言，如果两个参与者都合作保持沉默，兩人都只會被判刑半年，总体利益更高，結果也比兩人背叛對方、判刑2年的情況較佳。</p>
+
+<h2>零和博弈</h2>
+
+<p>零和博弈(英语：Zero-Sum Game)又称零和游戏或零和賽局，与非零和博弈相对，是博弈论的一个概念，属非合作博弈，
+指参与博弈的各方，在严格竞争下，一方的收益必然意味着另一方的损失，博弈各方的收益和损失相加总和永远为“零”。<strong>双方不存在合作的可能</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[云存储]]></title>
+    <link href="http://YunnuY.github.com/blog/2012/08/04/a-few-words-about-cloud-storage/"/>
+    <updated>2012-08-04T15:33:00+08:00</updated>
+    <id>http://YunnuY.github.com/blog/2012/08/04/a-few-words-about-cloud-storage</id>
+    <content type="html"><![CDATA[<p>写博客有时想放一些图片，就想到了云储存。平常也关注了下，但没认真考察过。
+首先说一下访问云的方式，从严格到开放的顺序：
+ <!-- more -->
+1. 需要登录他们的网站或者客户端，才能使用。既没有任何API。
+2. 有特定API，且是需要验证。如php，ios等。
+3. 有通用API，如json，uri等，但是会跳转到他们的网站。（外链 - Direct link:download)
+4. 通过url直接访问。（直链 - Direct link:streaming)</p>
+
+<p>然后看一下收费，基本都是这种存储 + 流量 分开付费的方式。</p>
+
+<p>然后我们看看一些云存储服务商。</p>
+
+<ol>
+<li><p>先说互联网老大，google storage,支持1，2，3种访问方式，到2012年底前，以下免费：
+<code>
+ 5 GB of storage
+ 25 GB of download data (20 GB to Americas and EMEA*; 5 GB to Asia-Pacific)
+ 25 GB of upload data (20 GB to Americas and EMEA*; 5 GB to Asia-Pacific)
+ 30,000 GET, HEAD requests
+ 3,000 PUT, POST, GET bucket, GET service requests
+</code></p></li>
+<li><p>opendrive *
+5G的免费存储，支持1，2，3种访问方式，通过交换链接，可以支持第4种访问方式加少量流量。
+适合写博客的我。<a href="http://www.opendrive.com" title="OpenDrive - Online storage, backup and file management">OpenDrive</a></p></li>
+<li><p>华为dbank
+提供较高性价比的直链服务。0.48/g，比google和有拍都便宜。</p></li>
+<li><p>有拍
+支持1，2，3，4种访问方式，无免费配额。听说服务稳定，价格适中。</p></li>
+<li>盛大云
+支持1，2，无免费版，仿亚马逊的，现在提够很多云服务。</li>
+<li>金山快盘 *
+注册送5G，支持1，2，3种访问方式。免费使用。</li>
+<li>skydrive *
+之前是25G，现在注册只有5G了。支持1，2，3种访问方式。有免费配额。</li>
+<li>dropbox
+和skydrive类似。</li>
+<li>ubuntu one *
+我用ubuntu，所以也用上了这个。5G免费配额。</li>
+<li>amazon s3
+知道它是老大，可惜一直被墙，无缘使用。</li>
+</ol>
+
+
+<p>   *表示已经试用。</p>
+
+<hr />
+]]></content>
+  </entry>
+  
+</feed>
