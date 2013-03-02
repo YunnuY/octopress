@@ -11,4 +11,119 @@
     font-size:12px;
   }
 }
+#footer_content{
+	width:980px;
+	height:300px;
+	position:relative;
+	margin:0 auto;
+	}
+#footer h3{
+	font-size:18px;
+	color:white;
+	margin-bottom:20px;
+	}
+#footer #customers{
+	width:490px;
+	float:left;
+	}
+#footer #customers li{
+	/*
+	width:214px;
+	height:64px;
+	*/
 
+	margin-right:8px;
+	margin-bottom:20px;
+	display:inline-block;
+	border:3px solid #e6e6e6;
+	background-color:white;
+	position:relative;
+
+	zoom: 1;
+    *display: inline;
+	}
+#footer #customers .radius{
+	border-radius:12px;
+	}
+#footer #customers a{
+	display:inline-block;
+	width:100%;
+	}
+
+#footer #customers .cus_intro{
+
+	position:absolute;
+	height:1.6em;
+	line-height:1.6em;
+	width:100%;
+	bottom:6px;
+
+	background-image:url(../images/custom_bg.png);
+	left:-3px;
+	border-left:3px solid #7a7a7a;
+	border-right:3px solid #7a7a7a;
+
+	color:white;
+	text-align:center;
+	font-size:12px;
+
+	}
+#footer #customers .radius .cus_intro{
+	border-bottom-left-radius:0px;
+	border-bottom-right-radius:0px;
+	}
+#footer #contact{
+	width:470px;
+	float:left;
+	padding-left:20px;
+	}
+#footer #contact #map{
+	width:256px;
+	height:170px;
+	float:left;
+	background-image:url(../images/map4.png);
+	}
+#footer #contact #details{
+	float:left;
+	width:180px;
+	padding-left:20px;
+	color:#8f8f8f;
+	}
+#footer #contact #details h4, #footer #contact #details h5{
+	font-size:15px;
+	line-height:2em;
+	}
+#footer #contact #details h5{
+		float:left;
+		margin-right:10px;
+		margin-top:5px;
+	}
+#footer #contact #details p{
+	font-size:12px;
+	line-height:2em;
+	}
+#footer #contact #details #address{
+	margin-bottom:10px;
+	}
+#footer #contact #details #phone{background-image:url(../images/phone.png);}
+#footer #contact #details #m_phone{background-image:url(../images/m_phone.png);}
+#footer #contact #details #mail{background-image:url(../images/mail.png);}
+#footer #contact #details #phone, #footer #contact #details #m_phone, #footer #contact #details #mail{
+	width:18px;
+	height:18px;
+	float:left;
+	margin-right:10px;
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	}
+#footer #contact #details #sina{background-image:url(../images/tsina.png);}
+#footer #contact #details #qq{background-image:url(../images/tqq.png);}
+#footer #contact #details #sina, #footer #contact #details #qq{
+	width:24px;
+	height:22px;
+	float:left;
+	margin-right:10px;
+	margin-top:8px;
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	}

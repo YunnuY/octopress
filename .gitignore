@@ -12,3 +12,4 @@ source/stylesheets/screen.css
 source/stylesheets/application.css
 vendor
 node_modules
+**.swp
