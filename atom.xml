@@ -4,7 +4,7 @@
   <title><![CDATA[YunnuY]]></title>
   <link href="http://YunnuY.github.com/atom.xml" rel="self"/>
   <link href="http://YunnuY.github.com/"/>
-  <updated>2013-02-23T23:40:25+08:00</updated>
+  <updated>2013-03-04T23:25:50+08:00</updated>
   <id>http://YunnuY.github.com/</id>
   <author>
     <name><![CDATA[YunnuY Software]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[test]]></title>
+    <link href="http://YunnuY.github.com/blog/2013/03/04/test/"/>
+    <updated>2013-03-04T23:21:00+08:00</updated>
+    <id>http://YunnuY.github.com/blog/2013/03/04/test</id>
+    <content type="html"><![CDATA[<hr />
+
+<blockquote><p>Test</p></blockquote>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[pipeline in rails3.1+]]></title>
