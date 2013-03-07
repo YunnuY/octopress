@@ -4,7 +4,7 @@
   <title><![CDATA[YunnuY]]></title>
   <link href="http://YunnuY.github.com/atom.xml" rel="self"/>
   <link href="http://YunnuY.github.com/"/>
-  <updated>2013-03-05T23:49:02+08:00</updated>
+  <updated>2013-03-07T22:50:01+08:00</updated>
   <id>http://YunnuY.github.com/</id>
   <author>
     <name><![CDATA[YunnuY Software]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to use PLACEHOLD.IT]]></title>
+    <link href="http://YunnuY.github.com/blog/2013/03/07/how-to-use-placehold-dot-it/"/>
+    <updated>2013-03-07T22:24:00+08:00</updated>
+    <id>http://YunnuY.github.com/blog/2013/03/07/how-to-use-placehold-dot-it</id>
+    <content type="html"><![CDATA[<h4>Do you ever heard of <code>PLACEHOLD.IT</code> ?</h4>
+
+<!--more-->
+
+
+<br/>  
+
+
+<h4>What&#8217;s <code>PLACEHOLD.IT</code> ? A quick and simple image placeholder service.</h4>
+
+<br/>  
+
+
+<h4>How does it work? Just put your image size after our URL and you&#8217;ll get a placeholder.</h4>
+
+<br/>  
+
+
+<h4>Like this: <code>http://placehold.it/350x150</code></h4>
+
+<br/>  
+
+
+<h4>You can also use it in your code, like this:</h4>
+
+<br/>  
+
+
+<h4><code>&lt;img src="http://placehold.it/350x150"&gt;</code></h4>
+
+<br/>  
+
+
+<h4>You will get a image placeholder like below:</h4>
+
+<p><img src="http://YunnuY.github.com/images/350x150.png" alt="Placehold for 350x150" /></p>
+
+<h4>But markdown does not support defining the height and width for the image. so you can choose to use <code>&lt;image&gt;</code> tag if need.</h4>
+
+<br/>  
+
+
+<h4>Is it very simple and useful? Have fun!</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[trouble shooting rake preview]]></title>
@@ -69,6 +120,11 @@ INFO:  gem "0.9.2.2" is not installed
 
 
 <h4>Now i can preview the installed <code>theme</code> happily&#8230;</h4>
+
+<br/>
+
+
+<p><a href="http://localhost:4000/blog/2013/03/05/trouble-shooting-rake-preview/">Back to Top</a></p>
 ]]></content>
   </entry>
   
@@ -370,6 +426,11 @@ $ git remote rm paul
 $ git remote
 origin
 </code></pre>
+
+<br/>
+
+
+<p><a href="http://localhost:4000/blog/2013/03/04/git-basic/">Back to Top</a></p>
 ]]></content>
   </entry>
   
