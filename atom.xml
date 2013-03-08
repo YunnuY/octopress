@@ -4,7 +4,7 @@
   <title><![CDATA[YunnuY]]></title>
   <link href="http://YunnuY.github.com/atom.xml" rel="self"/>
   <link href="http://YunnuY.github.com/"/>
-  <updated>2013-03-07T22:53:56+08:00</updated>
+  <updated>2013-03-08T23:47:30+08:00</updated>
   <id>http://YunnuY.github.com/</id>
   <author>
     <name><![CDATA[YunnuY Software]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bootstrap Basic]]></title>
+    <link href="http://YunnuY.github.com/blog/2013/03/08/bootstrap-basic/"/>
+    <updated>2013-03-08T23:25:00+08:00</updated>
+    <id>http://YunnuY.github.com/blog/2013/03/08/bootstrap-basic</id>
+    <content type="html"><![CDATA[<h4>According to the <a href="http://twitter.github.com/bootstrap/index.html">offical website</a>: <code>Bootstrap</code> is a sleek, intuitive, and powerful front-end framework. Made for faster and easier web development.</h4>
+
+<!--more-->
+
+
+<br/>  
+
+
+<h4>How to put Bootstrap to use? Simple! Just download the bootstrap.</h4>
+
+<br/>  
+
+
+<h4>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You&#8217;ll see something like this:</h4>
+
+<p><img src="http://YunnuY.github.com/images/Bootstrap.png" alt="Bootstrap structure" /></p>
+
+<h4>And use it as the external normal <code>.css</code> file and <code>.js</code> file. Like this:</h4>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;!-- Bootstrap --&gt;
+            &lt;link href="css/bootstrap.min.css" rel="stylesheet" media="screen"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;Hello, world!&lt;/h1&gt;
+            &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+</pre>
+
+
+<h4>And you&#8217;re set! With those two files added, you can begin to develop any site or application with Bootstrap.</h4>
+
+<br/> 
+
+
+<h4>Bootstrap is built on responsive 12-column grids, layouts, and components.</h4>
+
+<br/> 
+
+
+<h4>Bootstrap provided us fantastic css style for all kinds of components. And we have many options to choose.</h4>
+
+<br/> 
+
+
+<h4>The best way to learn Bootstrap is try to use it as many as possible. Let&#8217;s go~</h4>
+
+<br/> 
+
+
+<p><a href="http://www.yunnuy.com/blog/2013/03/08/bootstrap-basic/">Back to Top</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to use PLACEHOLD.IT]]></title>
