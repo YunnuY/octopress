@@ -4,7 +4,7 @@
   <title><![CDATA[YunnuY]]></title>
   <link href="http://YunnuY.github.com/atom.xml" rel="self"/>
   <link href="http://YunnuY.github.com/"/>
-  <updated>2013-03-08T23:47:30+08:00</updated>
+  <updated>2013-03-16T22:12:22+08:00</updated>
   <id>http://YunnuY.github.com/</id>
   <author>
     <name><![CDATA[YunnuY Software]]></name>
@@ -18,7 +18,12 @@
     <link href="http://YunnuY.github.com/blog/2013/03/08/bootstrap-basic/"/>
     <updated>2013-03-08T23:25:00+08:00</updated>
     <id>http://YunnuY.github.com/blog/2013/03/08/bootstrap-basic</id>
-    <content type="html"><![CDATA[<h4>According to the <a href="http://twitter.github.com/bootstrap/index.html">offical website</a>: <code>Bootstrap</code> is a sleek, intuitive, and powerful front-end framework. Made for faster and easier web development.</h4>
+    <content type="html"><![CDATA[<h4>According to the <a href="http://twitter.github.com/bootstrap/index.html">offical website</a>: <code>Bootstrap</code> is a sleek, intuitive, and powerful front-end framework.</h4>
+
+<br/>    
+
+
+<h4>Made for faster and easier web development.</h4>
 
 <!--more-->
 
@@ -85,13 +90,13 @@
     <id>http://YunnuY.github.com/blog/2013/03/07/how-to-use-placehold-dot-it</id>
     <content type="html"><![CDATA[<h4>Do you ever heard of <code>PLACEHOLD.IT</code> ?</h4>
 
-<!--more-->
-
-
-<br/>  
+<br/>          
 
 
 <h4>What&#8217;s <code>PLACEHOLD.IT</code> ? A quick and simple image placeholder service.</h4>
+
+<!--more-->
+
 
 <br/>  
 
@@ -134,11 +139,26 @@
     <link href="http://YunnuY.github.com/blog/2013/03/05/trouble-shooting-rake-preview/"/>
     <updated>2013-03-05T23:27:00+08:00</updated>
     <id>http://YunnuY.github.com/blog/2013/03/05/trouble-shooting-rake-preview</id>
-    <content type="html"><![CDATA[<h4>When i cloned one repo to my local disk and try to <code>rake clean-&gt; rake install[theme-name]--&gt;rake preview</code></h4>
+    <content type="html"><![CDATA[<h4>When i cloned one repo to my local disk and try to <code>rake clean-&gt; rake install[theme-name]--&gt;rake preview</code>,</h4>
+
+<br/>
+
+
+<h4>I encountered the issue &#8216;Could not find&#8230; Run bundle install to install missing gems&#8217;,</h4>
 
 <p> <!-- more --></p>
 
-<h4>I encountered the issue &#8216;Could not find&#8230; Run bundle install to install missing gems&#8217;,so i run <code>bundle install</code> in the octopress directory, try to run <code>rake -T</code> to show the command rake related after bundle install is completed,then i encountered: &#8216;rake aborted  You have already activated rake 0.9.2.2, but your Gemfile requires rake 0.9.2. Using bundle exec may solve this.&#8217;</h4>
+<h4>so i run <code>bundle install</code> in the octopress directory, try to run <code>rake -T</code> to show the command rake related after bundle install</h4>
+
+<br/>
+
+
+<h4>is completed,then i encountered: &#8216;rake aborted  You have already activated rake 0.9.2.2, but your Gemfile requires rake 0.9.2.</h4>
+
+<br/>
+
+
+<h4>Using bundle exec may solve this.&#8217;</h4>
 
 <br/>
 
@@ -200,9 +220,12 @@ INFO:  gem "0.9.2.2" is not installed
     <id>http://YunnuY.github.com/blog/2013/03/04/git-basic</id>
     <content type="html"><![CDATA[<h4>Even though i have touched <strong><code>Git</code></strong> many weeeks ago, but i never totally figure it very clearly. Even for now&#8230;</h4>
 
-<p> <!-- more --></p>
+<br/>
+
 
 <h4>Before demonstrate and analyze every single Git statement usage. I would like to explain some terminologies first:</h4>
+
+<p> <!-- more --></p>
 
 <br/>
 
