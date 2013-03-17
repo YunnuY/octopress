@@ -5,12 +5,11 @@ date: 2013-03-04 23:21
 comments: true
 categories: 
 ---
-####Even though i have touched **`Git`** many weeeks ago, but i never totally figure it very clearly. Even for now...
-<br/>
-####Before demonstrate and analyze every single Git statement usage. I would like to explain some terminologies first:  
- <!-- more -->	 
-<br/>
+
+Even though i have touched **`Git`** many weeeks ago, but i never totally figure it very clearly. Even for now...
+Before demonstrate and analyze every single Git statement usage. I would like to explain some terminologies first:  
 - **Tracked files** are files that were in the last snapshot; they can be unmodified, modified, or staged.
+ <!-- more -->	 
 - **Untracked files** are everything else - any files in your working directory that were not in your last
 snapshot and are not in your staging area. Every file in your working directory can be in one of two states: **`tracked`** or **`untracked`**.
 - **Committed** means that the data is safely stored in your local database. 
@@ -25,13 +24,13 @@ snapshot and are not in your staging area. Every file in your working directory 
 	standard to refer to it as the staging area.
 
 ####The basic Git workflow goes something like this:         
-<br/>
+
 - **Modify files in your working directory.**
 - **Stage the files, adding snapshots of them to your staging area.**
 - **Submit a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.**
 
 ####Let's demonstrate the workflow using a simple example:
-<br/>
+
 ####Checking the Status
 	$ git status
 	# On branch master
@@ -229,5 +228,3 @@ snapshot and are not in your staging area. Every file in your working directory 
 	$ git remote rm paul
 	$ git remote
 	origin
-<br/>
-[Back to Top](http://www.yunnuy.com/blog/2013/03/04/git-basic/)
