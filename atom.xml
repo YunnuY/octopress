@@ -4,7 +4,7 @@
   <title><![CDATA[YunnuY]]></title>
   <link href="http://YunnuY.github.com/atom.xml" rel="self"/>
   <link href="http://YunnuY.github.com/"/>
-  <updated>2013-03-16T22:12:22+08:00</updated>
+  <updated>2013-03-18T23:42:13+08:00</updated>
   <id>http://YunnuY.github.com/</id>
   <author>
     <name><![CDATA[YunnuY Software]]></name>
@@ -14,72 +14,125 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Bootstrap Basic]]></title>
-    <link href="http://YunnuY.github.com/blog/2013/03/08/bootstrap-basic/"/>
-    <updated>2013-03-08T23:25:00+08:00</updated>
-    <id>http://YunnuY.github.com/blog/2013/03/08/bootstrap-basic</id>
-    <content type="html"><![CDATA[<h4>According to the <a href="http://twitter.github.com/bootstrap/index.html">offical website</a>: <code>Bootstrap</code> is a sleek, intuitive, and powerful front-end framework.</h4>
-
-<br/>    
-
-
-<h4>Made for faster and easier web development.</h4>
+    <title type="html"><![CDATA[highlight the current navigation]]></title>
+    <link href="http://YunnuY.github.com/blog/2013/03/18/highlight-the-current-navigation/"/>
+    <updated>2013-03-18T23:05:00+08:00</updated>
+    <id>http://YunnuY.github.com/blog/2013/03/18/highlight-the-current-navigation</id>
+    <content type="html"><![CDATA[<p>Why do we need highlight the current navigation? Best pratice suggests that we should always indicate <br/>
+links to the page the user is currently on. It&#8217;s a very common and reasonable request when we involved in the UI development.</p>
 
 <!--more-->
 
 
-<br/>  
+<p>Ok, the important point is how to highlight the current navigation. I got many answers after i googled and<br/>
+i plan to share the most efficient and easy to implement solution.
+This solution uses JavaScript to match the URL of the current<br/>
+page to the URL of the link. The JavaScript simply gets the URL of the current page, then it looks through all the links in the navigation<br/>
+menu you target. If the link href matches the url of the page, it adds an extra CSS class to that link. Here the <code>current</code> is.</p>
+
+<p>The html code is like below:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ul id="nav"&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="index.html"&gt;主页&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>  &lt;li&gt;&lt;a href="column.html"&gt;栏目&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>&lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>How to put Bootstrap to use? Simple! Just download the bootstrap.</h4>
+<p>And javascript code is like below:</p>
 
-<br/>  
-
-
-<h4>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You&#8217;ll see something like this:</h4>
-
-<p><img src="http://YunnuY.github.com/images/Bootstrap.png" alt="Bootstrap structure" /></p>
-
-<h4>And use it as the external normal <code>.css</code> file and <code>.js</code> file. Like this:</h4>
-
-<pre>
-&lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-        &lt;head&gt;
-            &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;!-- Bootstrap --&gt;
-            &lt;link href="css/bootstrap.min.css" rel="stylesheet" media="screen"&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;h1&gt;Hello, world!&lt;/h1&gt;
-            &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
-        &lt;/body&gt;
-    &lt;/html&gt;
-</pre>
-
-
-<h4>And you&#8217;re set! With those two files added, you can begin to develop any site or application with Bootstrap.</h4>
-
-<br/> 
-
-
-<h4>Bootstrap is built on responsive 12-column grids, layouts, and components.</h4>
-
-<br/> 
-
-
-<h4>Bootstrap provided us fantastic css style for all kinds of components. And we have many options to choose.</h4>
-
-<br/> 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;script type="text/javascript"&gt;
+</span><span class='line'>  var nav = document.getElementById("nav");
+</span><span class='line'>  var links = document.getElementsByTagName("li");
+</span><span class='line'>  var lilen = document.getElementsByTagName("a");
+</span><span class='line'>  var currenturl = document.location.href;
+</span><span class='line'>  var last = 0;
+</span><span class='line'>  for (var i=0; i&lt;links.length; i++)
+</span><span class='line'>  {
+</span><span class='line'>      var linkurl = lilen[i].getAttribute("href");
+</span><span class='line'>      if(currenturl.indexOf(linkurl)!=-1)
+</span><span class='line'>      {
+</span><span class='line'>          last = i-1;
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>  links[last].className = "current";
+</span><span class='line'>&lt;/script&gt;
+</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>The best way to learn Bootstrap is try to use it as many as possible. Let&#8217;s go~</h4>
+<p>That&#8217;s it! You just highlight the current navigation! Congratulations~</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bootstrap Basic]]></title>
+    <link href="http://YunnuY.github.com/blog/2013/03/08/bootstrap-basic/"/>
+    <updated>2013-03-08T23:25:00+08:00</updated>
+    <id>http://YunnuY.github.com/blog/2013/03/08/bootstrap-basic</id>
+    <content type="html"><![CDATA[<p>According to the <a href="http://twitter.github.com/bootstrap/index.html">offical website</a>:
+<code>Bootstrap</code> is a sleek, intuitive, and powerful front-end framework.      <br/>
+Made for faster and easier web development.
+How to put Bootstrap to use? Simple! Just download the bootstrap.</p>
 
-<br/> 
+<!--more-->
 
 
-<p><a href="http://www.yunnuy.com/blog/2013/03/08/bootstrap-basic/">Back to Top</a></p>
+<p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You&#8217;ll see something like this:<br/>
+<img src="http://YunnuY.github.com/images/Bootstrap.png" alt="Bootstrap structure" />
+And use it as the external normal <code>.css</code> file and <code>.js</code> file. Like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!DOCTYPE html&gt;
+</span><span class='line'>  &lt;html&gt;
+</span><span class='line'>      &lt;head&gt;
+</span><span class='line'>            &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+</span><span class='line'>            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</span><span class='line'>            &lt;!-- Bootstrap --&gt;
+</span><span class='line'>            &lt;link href="css/bootstrap.min.css" rel="stylesheet" media="screen"&gt;
+</span><span class='line'>      &lt;/head&gt;
+</span><span class='line'>      &lt;body&gt;
+</span><span class='line'>            &lt;h1&gt;Hello, world!&lt;/h1&gt;
+</span><span class='line'>            &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+</span><span class='line'>      &lt;/body&gt;
+</span><span class='line'>  &lt;/html&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And you&#8217;re set! With those two files added, you can begin to develop any site or application with Bootstrap.
+Bootstrap is built on responsive 12-column grids, layouts, and components.
+Bootstrap provided us fantastic css style for all kinds of components. And we have many options to choose.
+The best way to learn Bootstrap is try to use it as many as possible. Let&#8217;s go~
+<a href="http://www.yunnuy.com/blog/2013/03/08/bootstrap-basic/">Back to Top</a></p>
 ]]></content>
   </entry>
   
@@ -88,49 +141,22 @@
     <link href="http://YunnuY.github.com/blog/2013/03/07/how-to-use-placehold-dot-it/"/>
     <updated>2013-03-07T22:24:00+08:00</updated>
     <id>http://YunnuY.github.com/blog/2013/03/07/how-to-use-placehold-dot-it</id>
-    <content type="html"><![CDATA[<h4>Do you ever heard of <code>PLACEHOLD.IT</code> ?</h4>
-
-<br/>          
-
-
-<h4>What&#8217;s <code>PLACEHOLD.IT</code> ? A quick and simple image placeholder service.</h4>
+    <content type="html"><![CDATA[<p>Do you ever heard of <code>PLACEHOLD.IT</code> ?<br/>
+What&#8217;s <code>PLACEHOLD.IT</code> ? A quick and simple image placeholder service. How does it work? <br/>
+Just put your image size after our URL and you&#8217;ll get a placeholder.</p>
 
 <!--more-->
 
 
-<br/>  
+<p>Like this: <code>http://placehold.it/350x150</code>   <br/>
+You can also use it in your code, like this:    <br/>
+<code>&lt;img src="http://placehold.it/350x150"&gt;</code> <br/>
+You will get a image placeholder like below:<br/>
+<img src="http://YunnuY.github.com/images/350x150.png" alt="Placehold for 350x150" /></p>
 
-
-<h4>How does it work? Just put your image size after our URL and you&#8217;ll get a placeholder.</h4>
-
-<br/>  
-
-
-<h4>Like this: <code>http://placehold.it/350x150</code></h4>
-
-<br/>  
-
-
-<h4>You can also use it in your code, like this:</h4>
-
-<br/>  
-
-
-<h4><code>&lt;img src="http://placehold.it/350x150"&gt;</code></h4>
-
-<br/>  
-
-
-<h4>You will get a image placeholder like below:</h4>
-
-<p><img src="http://YunnuY.github.com/images/350x150.png" alt="Placehold for 350x150" /></p>
-
-<h4>But markdown does not support defining the height and width for the image. so you can choose to use <code>&lt;image&gt;</code> tag if need.</h4>
-
-<br/>  
-
-
-<h4>Is it very simple and useful? Have fun!</h4>
+<p>But markdown does not support defining the height and width for the image. <br/>
+so you can choose to use <code>&lt;image&gt;</code> tag if need.
+Is it very simple and useful? Have fun!</p>
 ]]></content>
   </entry>
   
@@ -139,77 +165,57 @@
     <link href="http://YunnuY.github.com/blog/2013/03/05/trouble-shooting-rake-preview/"/>
     <updated>2013-03-05T23:27:00+08:00</updated>
     <id>http://YunnuY.github.com/blog/2013/03/05/trouble-shooting-rake-preview</id>
-    <content type="html"><![CDATA[<h4>When i cloned one repo to my local disk and try to <code>rake clean-&gt; rake install[theme-name]--&gt;rake preview</code>,</h4>
+    <content type="html"><![CDATA[<p>When i cloned one repo to my local disk and try to <code>rake clean-&gt; rake install[theme-name]--&gt;rake preview</code>,
+I encountered the issue &#8216;Could not find&#8230; Run bundle install to install missing gems&#8217;, <br/>
+so i run <code>bundle install</code> in the octopress directory, try to run <code>rake -T</code> to show the command rake related after bundle install
+ <!-- more -->
+is completed,then i encountered: &#8216;rake aborted  You have already activated rake 0.9.2.2, but your Gemfile requires rake 0.9.2.
+Using bundle exec may solve this.&#8217;
+It seems the version of rake is conflict. i executed below steps to slove this issue:</p>
 
-<br/>
+<p><code>$ gem list</code>   (to show all the gems and their version installed(will see more than one versions for rake)), and i got:</p>
 
-
-<h4>I encountered the issue &#8216;Could not find&#8230; Run bundle install to install missing gems&#8217;,</h4>
-
-<p> <!-- more --></p>
-
-<h4>so i run <code>bundle install</code> in the octopress directory, try to run <code>rake -T</code> to show the command rake related after bundle install</h4>
-
-<br/>
-
-
-<h4>is completed,then i encountered: &#8216;rake aborted  You have already activated rake 0.9.2.2, but your Gemfile requires rake 0.9.2.</h4>
-
-<br/>
-
-
-<h4>Using bundle exec may solve this.&#8217;</h4>
-
-<br/>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>*** LOCAL GEMS ***
+</span><span class='line'>...
+</span><span class='line'>rake (0.9.2.2, 0.8.7)
+</span><span class='line'>here it is...</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>It seems the version of rake is conflict. i executed below steps to slove this issue:</h4>
+<p><code>$ gem uninstall rake</code>  (since the version conflict, need to uninstall one version)</p>
 
-<p></br/></p>
-
-<h4><code>$ gem list</code>   (to show all the gems and their version installed(will see more than one versions for rake)), and i got:</h4>
-
-<pre>
-*** LOCAL GEMS ***
-...
-rake (0.9.2.2, 0.8.7)
-</pre>
-
-
-<h4>here it is&#8230;</h4>
-
-<br/>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Select gem to uninstall:
+</span><span class='line'> 1. rake-0.8.7
+</span><span class='line'> 2. rake-0.9.2.2
+</span><span class='line'> 3. All versions</span></code></pre></td></tr></table></div></figure>
 
 
-<h4><code>$ gem uninstall rake</code>  (since the version conflict, need to uninstall one version)</h4>
+<p>and i type into: <code>2</code>     (select the version you want to uninstall, it depends the rake verison your Gemfile requires)</p>
 
-<pre>
-Select gem to uninstall:
- 1. rake-0.8.7
- 2. rake-0.9.2.2
- 3. All versions
-</pre>
-
-
-<h4>and i type into: <code>2</code>     (select the version you want to uninstall, it depends the rake verison your Gemfile requires)</h4>
-
-<pre>
-You have requested to uninstall the gem: rake-0.9.2.2
-addressable-2.2.6 depends on [rake (>= 0.7.3)]
-...
-If you remove this gems, one or more dependencies will not be met.
-Continue with Uninstall? [Yn]  Y
-Successfully uninstalled rake-0.9.2.2
-INFO:  gem "0.9.2.2" is not installed
-</pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>You have requested to uninstall the gem: rake-0.9.2.2
+</span><span class='line'>addressable-2.2.6 depends on [rake (&gt;= 0.7.3)]
+</span><span class='line'>...
+</span><span class='line'>If you remove this gems, one or more dependencies will not be met.
+</span><span class='line'>Continue with Uninstall? [Yn]  Y
+</span><span class='line'>Successfully uninstalled rake-0.9.2.2
+</span><span class='line'>INFO:  gem "0.9.2.2" is not installed</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>Now i can preview the installed <code>theme</code> happily&#8230;</h4>
-
-<br/>
-
-
-<p><a href="http://www.yunnuy.com/blog/2013/03/05/trouble-shooting-rake-preview/">Back to Top</a></p>
+<p>Now i can preview the installed <code>theme</code> happily&#8230;</p>
 ]]></content>
   </entry>
   
@@ -218,27 +224,21 @@ INFO:  gem "0.9.2.2" is not installed
     <link href="http://YunnuY.github.com/blog/2013/03/04/git-basic/"/>
     <updated>2013-03-04T23:21:00+08:00</updated>
     <id>http://YunnuY.github.com/blog/2013/03/04/git-basic</id>
-    <content type="html"><![CDATA[<h4>Even though i have touched <strong><code>Git</code></strong> many weeeks ago, but i never totally figure it very clearly. Even for now&#8230;</h4>
+    <content type="html"><![CDATA[<p>Even though i have touched <strong><code>Git</code></strong> many weeeks ago, but i never totally figure it very clearly. Even for now&#8230;
+Before demonstrate and analyze every single Git statement usage. I would like to explain some terminologies first:<br/>
+- <strong>Tracked files</strong> are files that were in the last snapshot; they can be unmodified, modified, or staged.
+ <!-- more --> <br/>
+- <strong>Untracked files</strong> are everything else - any files in your working directory that were not in your last
+snapshot and are not in your staging area. Every file in your working directory can be in one of two states: <strong><code>tracked</code></strong> or <strong><code>untracked</code></strong>.
+- <strong>Committed</strong> means that the data is safely stored in your local database.
+<strong><code>Modified</code></strong> means that you have changed the file but have not committed it to your database yet.
+- <strong>Staged</strong> means that you have marked a modified file in its current version to go into your next commit snapshot.
+- <strong>Git directory</strong> is where Git stores the metadata and object database for your project. This is</p>
 
-<br/>
-
-
-<h4>Before demonstrate and analyze every single Git statement usage. I would like to explain some terminologies first:</h4>
-
-<p> <!-- more --></p>
-
-<br/>
-
+<pre><code>the most important part of Git, and it is what is copied when you clone a repository from another computer.
+</code></pre>
 
 <ul>
-<li><strong>Tracked files</strong> are files that were in the last snapshot; they can be unmodified, modified, or staged.</li>
-<li><strong>Untracked files</strong> are everything else - any files in your working directory that were not in your last
-snapshot and are not in your staging area. Every file in your working directory can be in one of two states: <strong><code>tracked</code></strong> or <strong><code>untracked</code></strong>.</li>
-<li><strong>Committed</strong> means that the data is safely stored in your local database.
-<strong><code>Modified</code></strong> means that you have changed the file but have not committed it to your database yet.</li>
-<li><strong>Staged</strong> means that you have marked a modified file in its current version to go into your next commit snapshot.</li>
-<li><strong>Git directory</strong> is where Git stores the metadata and object database for your project. This is
-  the most important part of Git, and it is what is copied when you clone a repository from another computer.</li>
 <li><strong>Working directory</strong> is a single checkout of one version of the project. These files are pulled out of
   the compressed database in the Git directory and placed on disk for you to use or modify.</li>
 <li><strong>Staging area</strong> is a simple file, generally contained in your <strong><code>Git directory</code></strong>, that stores information
@@ -249,9 +249,6 @@ snapshot and are not in your staging area. Every file in your working directory 
 
 <h4>The basic Git workflow goes something like this:</h4>
 
-<br/>
-
-
 <ul>
 <li><strong>Modify files in your working directory.</strong></li>
 <li><strong>Stage the files, adding snapshots of them to your staging area.</strong></li>
@@ -260,9 +257,6 @@ snapshot and are not in your staging area. Every file in your working directory 
 
 
 <h4>Let&#8217;s demonstrate the workflow using a simple example:</h4>
-
-<br/>
-
 
 <h4>Checking the Status</h4>
 
@@ -514,11 +508,6 @@ $ git remote rm paul
 $ git remote
 origin
 </code></pre>
-
-<br/>
-
-
-<p><a href="http://www.yunnuy.com/blog/2013/03/04/git-basic/">Back to Top</a></p>
 ]]></content>
   </entry>
   

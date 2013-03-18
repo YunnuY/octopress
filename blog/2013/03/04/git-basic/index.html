@@ -92,7 +92,7 @@
 <article class="hentry span9" role="article">
 
   
-  <header class="page-header">
+  <header>
     
       <h1 class="entry-title">Exploring Git</h1>
     
@@ -117,27 +117,21 @@
   </header>
 
 
-<div class="entry-content"><h4>Even though i have touched <strong><code>Git</code></strong> many weeeks ago, but i never totally figure it very clearly. Even for now&#8230;</h4>
+<div class="entry-content"><p>Even though i have touched <strong><code>Git</code></strong> many weeeks ago, but i never totally figure it very clearly. Even for now&#8230;
+Before demonstrate and analyze every single Git statement usage. I would like to explain some terminologies first:<br/>
+- <strong>Tracked files</strong> are files that were in the last snapshot; they can be unmodified, modified, or staged.
+ <!-- more --> <br/>
+- <strong>Untracked files</strong> are everything else - any files in your working directory that were not in your last
+snapshot and are not in your staging area. Every file in your working directory can be in one of two states: <strong><code>tracked</code></strong> or <strong><code>untracked</code></strong>.
+- <strong>Committed</strong> means that the data is safely stored in your local database.
+<strong><code>Modified</code></strong> means that you have changed the file but have not committed it to your database yet.
+- <strong>Staged</strong> means that you have marked a modified file in its current version to go into your next commit snapshot.
+- <strong>Git directory</strong> is where Git stores the metadata and object database for your project. This is</p>
 
-<br/>
-
-
-<h4>Before demonstrate and analyze every single Git statement usage. I would like to explain some terminologies first:</h4>
-
-<p> <!-- more --></p>
-
-<br/>
-
+<pre><code>the most important part of Git, and it is what is copied when you clone a repository from another computer.
+</code></pre>
 
 <ul>
-<li><strong>Tracked files</strong> are files that were in the last snapshot; they can be unmodified, modified, or staged.</li>
-<li><strong>Untracked files</strong> are everything else - any files in your working directory that were not in your last
-snapshot and are not in your staging area. Every file in your working directory can be in one of two states: <strong><code>tracked</code></strong> or <strong><code>untracked</code></strong>.</li>
-<li><strong>Committed</strong> means that the data is safely stored in your local database.
-<strong><code>Modified</code></strong> means that you have changed the file but have not committed it to your database yet.</li>
-<li><strong>Staged</strong> means that you have marked a modified file in its current version to go into your next commit snapshot.</li>
-<li><strong>Git directory</strong> is where Git stores the metadata and object database for your project. This is
-  the most important part of Git, and it is what is copied when you clone a repository from another computer.</li>
 <li><strong>Working directory</strong> is a single checkout of one version of the project. These files are pulled out of
   the compressed database in the Git directory and placed on disk for you to use or modify.</li>
 <li><strong>Staging area</strong> is a simple file, generally contained in your <strong><code>Git directory</code></strong>, that stores information
@@ -148,9 +142,6 @@ snapshot and are not in your staging area. Every file in your working directory 
 
 <h4>The basic Git workflow goes something like this:</h4>
 
-<br/>
-
-
 <ul>
 <li><strong>Modify files in your working directory.</strong></li>
 <li><strong>Stage the files, adding snapshots of them to your staging area.</strong></li>
@@ -159,9 +150,6 @@ snapshot and are not in your staging area. Every file in your working directory 
 
 
 <h4>Let&#8217;s demonstrate the workflow using a simple example:</h4>
-
-<br/>
-
 
 <h4>Checking the Status</h4>
 
@@ -413,13 +401,9 @@ $ git remote rm paul
 $ git remote
 origin
 </code></pre>
-
-<br/>
-
-
-<p><a href="http://www.yunnuy.com/blog/2013/03/04/git-basic/">Back to Top</a></p>
 </div>
 
+<br/>
 
   <footer>
     <p class="meta">
@@ -477,6 +461,10 @@ origin
     <li class="nav-header">Recent Posts</li>
     
       <li class="post">
+        <a href="/blog/2013/03/18/highlight-the-current-navigation/">highlight the current navigation</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/08/bootstrap-basic/">Bootstrap Basic</a>
       </li>
     
@@ -490,10 +478,6 @@ origin
     
       <li class="post">
         <a href="/blog/2013/03/04/git-basic/">Exploring Git</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/12/02/pipeline-in-rails3-dot-1-plus/">pipeline in rails3.1+</a>
       </li>
     
   </ul>

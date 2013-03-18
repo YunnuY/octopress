@@ -92,7 +92,7 @@
 <article class="hentry span9" role="article">
 
   
-  <header class="page-header">
+  <header>
     
       <h1 class="entry-title">Bootstrap Basic</h1>
     
@@ -117,70 +117,54 @@
   </header>
 
 
-<div class="entry-content"><h4>According to the <a href="http://twitter.github.com/bootstrap/index.html">offical website</a>: <code>Bootstrap</code> is a sleek, intuitive, and powerful front-end framework.</h4>
-
-<br/>    
-
-
-<h4>Made for faster and easier web development.</h4>
+<div class="entry-content"><p>According to the <a href="http://twitter.github.com/bootstrap/index.html">offical website</a>:
+<code>Bootstrap</code> is a sleek, intuitive, and powerful front-end framework.      <br/>
+Made for faster and easier web development.
+How to put Bootstrap to use? Simple! Just download the bootstrap.</p>
 
 <!--more-->
 
 
-<br/>  
+<p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You&#8217;ll see something like this:<br/>
+<img src="/images/Bootstrap.png" alt="Bootstrap structure" />
+And use it as the external normal <code>.css</code> file and <code>.js</code> file. Like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;!DOCTYPE html&gt;
+</span><span class='line'>  &lt;html&gt;
+</span><span class='line'>      &lt;head&gt;
+</span><span class='line'>            &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
+</span><span class='line'>            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</span><span class='line'>            &lt;!-- Bootstrap --&gt;
+</span><span class='line'>            &lt;link href="css/bootstrap.min.css" rel="stylesheet" media="screen"&gt;
+</span><span class='line'>      &lt;/head&gt;
+</span><span class='line'>      &lt;body&gt;
+</span><span class='line'>            &lt;h1&gt;Hello, world!&lt;/h1&gt;
+</span><span class='line'>            &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+</span><span class='line'>      &lt;/body&gt;
+</span><span class='line'>  &lt;/html&gt;</span></code></pre></td></tr></table></div></figure>
 
 
-<h4>How to put Bootstrap to use? Simple! Just download the bootstrap.</h4>
-
-<br/>  
-
-
-<h4>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Bootstrap. You&#8217;ll see something like this:</h4>
-
-<p><img src="/images/Bootstrap.png" alt="Bootstrap structure" /></p>
-
-<h4>And use it as the external normal <code>.css</code> file and <code>.js</code> file. Like this:</h4>
-
-<pre>
-&lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-        &lt;head&gt;
-            &lt;title&gt;Bootstrap 101 Template&lt;/title&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-            &lt;!-- Bootstrap --&gt;
-            &lt;link href="css/bootstrap.min.css" rel="stylesheet" media="screen"&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;h1&gt;Hello, world!&lt;/h1&gt;
-            &lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
-        &lt;/body&gt;
-    &lt;/html&gt;
-</pre>
-
-
-<h4>And you&#8217;re set! With those two files added, you can begin to develop any site or application with Bootstrap.</h4>
-
-<br/> 
-
-
-<h4>Bootstrap is built on responsive 12-column grids, layouts, and components.</h4>
-
-<br/> 
-
-
-<h4>Bootstrap provided us fantastic css style for all kinds of components. And we have many options to choose.</h4>
-
-<br/> 
-
-
-<h4>The best way to learn Bootstrap is try to use it as many as possible. Let&#8217;s go~</h4>
-
-<br/> 
-
-
-<p><a href="http://www.yunnuy.com/blog/2013/03/08/bootstrap-basic/">Back to Top</a></p>
+<p>And you&#8217;re set! With those two files added, you can begin to develop any site or application with Bootstrap.
+Bootstrap is built on responsive 12-column grids, layouts, and components.
+Bootstrap provided us fantastic css style for all kinds of components. And we have many options to choose.
+The best way to learn Bootstrap is try to use it as many as possible. Let&#8217;s go~
+<a href="http://www.yunnuy.com/blog/2013/03/08/bootstrap-basic/">Back to Top</a></p>
 </div>
 
+<br/>
 
   <footer>
     <p class="meta">
@@ -223,6 +207,10 @@
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
+      <li class="next"><a class="basic-alignment right" href="/blog/2013/03/18/highlight-the-current-navigation/"
+        title="Next Post: highlight the current navigation">highlight the current navigation
+        &raquo;</a></li>
+      
     </ul>
   </footer>
 </article>
@@ -232,6 +220,10 @@
     <section class="well">
   <ul id="recent_posts" class="nav nav-list">
     <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/18/highlight-the-current-navigation/">highlight the current navigation</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/03/08/bootstrap-basic/">Bootstrap Basic</a>
@@ -247,10 +239,6 @@
     
       <li class="post">
         <a href="/blog/2013/03/04/git-basic/">Exploring Git</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/12/02/pipeline-in-rails3-dot-1-plus/">pipeline in rails3.1+</a>
       </li>
     
   </ul>
